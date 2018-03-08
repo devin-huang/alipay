@@ -1,0 +1,28 @@
+<?php
+
+//构造参数
+$aop = new AopClient ();
+
+//支付宝网关
+$aop->gatewayUrl = 'https://openapi.alipaydev.com/gateway.do';
+
+//应用ID,您的APPID
+$aop->appId = '2016080700189231';
+
+//商户私钥
+$aop->rsaPrivateKey = 'MIIEogIBAAKCAQEAvZ1hSr6oOfBYbd3HEEjMw9j/dPthTLfFXsrlem0FK6rBpTNnKR1nRlP2mZLd0omHzd4wEB2NvU7fjkVWK6DvKCs0xfKpAGeLGCQDT+9RqVgxXlQjM/9BEiYozYbQdHQ/w0FAagL4y7ntOFaVjjP1c/+9Fdq8l6ScqBsKcWnjTBm9W0FP/yvoajCpQfnx89c771S/eWlRLBk621c2HjKH9d5b8Z5DjQhtD2n0A6L11sxLgIpE+Nyl4U2pHUF7dSnCTcOBo4Bk4HMECwEKAVvr9V3bHNa+gJMe+9tdY0kb/MA9ezt7+9yQA+Twc3xluJ+1qeZwwvZT8GJTaJNnTJsE6QIDAQABAoIBAA/Wb2Pw3NhKDPjQR2pCymepXl0FCjGAQAoU5Gn/ZSkqkBYeXwV+ITwskzJso/6L4j39ywHtlgMz7VRS0km+nXs7cKMAC8Gu5F1V1Lj+glGkvirk2DPlpCfB7DKOiibP9ut2Lc0tBl7t3rSP9tnz2RKhT8fdh1cbNsKLz6l9cLDQaHvQN38lt0ChVah7qjJZ6HKqKayVTq/FRsB1ipG6rQmg1sZSiWJP9aYrQa/0dcyAlHDu7dyIW1/ZK6a1W53O2a61iP4HuBNNHlXTusnCXRmNhBgjJTLao3vzIBzCEZNVnOF83Do6JaK0U5er8GFfXg2C+Dmh1qyOtOHwqWeungECgYEA+WsRkIRg34kOEXBpAJXJHzYdcTXuU02lqWYmFUO9RX8x0rt5kzWS+8C6+oF/5qasi4VSMG1ULdPY3JzyPVS2uybDA74D5fLIasQQBoNNvYSJ5m91azXt3aPC1buJKuOG3Hh8rUMOmpJ6j8w0VDh+9AMDNELQfhJhi9Sm7owIR+ECgYEAwp5P9KLcsZjOfkrpBOpBnI5xX7gp7sJ8ndEHFXn3m93ws+bcBwHQK+ZaDaejBinu4a0OC/cV/SP45BPDlSbJqdOzV0mggEieRPWofyrB0XkHsjEESn/fmqQEIwTmdjlYDDfiXQdC4arwrVnDt3XZ4qDCmwjL75H9WFY2lJvoPgkCgYBc4yIEdzh4p1sk5X9FZ4Mia43ldpdOUNGMV+2A59xaQHd2qrkpOL+HoIxB9O6EILiLsVgdjunVs1rFNnIEo0L2SgZAo4hiH9vB30i0lDvkg7KzrfjFt6zhaTaLUK9R2LCF9R1BjYKn0DtyyDMI1o15JJIR6XwqJ4BKiiStHFuNIQKBgDf3zSieOXd9aUzagB6gu5OpRyNu0+hM2AeOmEnt1G5nqhQifP4q4FHvodAxeGmKX59Y5CQ+v30X/jihEmrvR6lmLzoX+2dI+vL77qP7iNeTxcnR3NkL4yMWrfXgL+Kp5Q9Gdvun3e0F+sbvfKBi7PEGqFBrfDJ+OmxQBsw/9c75AoGAT9jkKcnz3d4UCsm1mi+5/92mpTP4B7zLW42GvldXgXjbO/DMq6oHAfHhFMZP8VfnDqSsdI7Sv8E/jnomsqSsQ9SPqRIQ2drCDS7ay9iSZO3elzySM7CP0Pdcshcvf+ZRpBBdKO9MdGkn8Y2XKDpA3V7nYfm5GsnLvHdO9wJCfCY=';
+
+//支付宝公钥,查看地址：https://openhome.alipay.com/platform/keyManage.htm 对应APPID下的支付宝公钥。
+$aop->alipayrsaPublicKey ='MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAvZ1hSr6oOfBYbd3HEEjMw9j/dPthTLfFXsrlem0FK6rBpTNnKR1nRlP2mZLd0omHzd4wEB2NvU7fjkVWK6DvKCs0xfKpAGeLGCQDT+9RqVgxXlQjM/9BEiYozYbQdHQ/w0FAagL4y7ntOFaVjjP1c/+9Fdq8l6ScqBsKcWnjTBm9W0FP/yvoajCpQfnx89c771S/eWlRLBk621c2HjKH9d5b8Z5DjQhtD2n0A6L11sxLgIpE+Nyl4U2pHUF7dSnCTcOBo4Bk4HMECwEKAVvr9V3bHNa+gJMe+9tdY0kb/MA9ezt7+9yQA+Twc3xluJ+1qeZwwvZT8GJTaJNnTJsE6QIDAQAB';
+
+//版本
+$aop->apiVersion = '1.0';
+
+//签名方式
+$aop->signType = 'RSA2';
+
+//编码格式
+$aop->postCharset= 'utf-8';
+
+//传输格式
+$aop->format='json';
